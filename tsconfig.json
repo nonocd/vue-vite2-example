@@ -10,15 +10,15 @@
     "allowJs": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    "types": ["vite/client"],
-    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }]
+    "lib": ["DOM", "DOM.Iterable", "ES6", "ES2020.Symbol.WellKnown", "ESNext.Symbol"],
+    "types": ["vite/client", "node"],
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["src/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "build",
-    "**/*.js"
-  ]
+  "exclude": ["node_modules", "dist", "build", "**/*.js"]
 }
