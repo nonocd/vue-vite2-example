@@ -1,21 +1,14 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
 import { resolve } from 'path';
 
-function pathResolve(dir: string) {
-  return resolve(__dirname, '.', dir);
-}
-
-const alias: Record<string, string> = {
-  '@': pathResolve('src'),
-};
-
 export default defineConfig({
-  // alias,
-  plugins: [vue(), vueJsx({})],
+  alias: {
+    '/@': resolve(__dirname, 'src'),
+  },
+  plugins: [vue()],
   optimizeDeps: {
-    include: ['ant-design-vue/es/locale/zh_CN'],
+    include: ['ant-design-vue/es/locale/zh_CN', 'moment/dist/locale/zh-cn'],
   },
   css: {
     preprocessorOptions: {
