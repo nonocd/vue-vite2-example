@@ -2,13 +2,13 @@
 # yarn lockfile v1
 
 
-"@ant-design-vue/pro-layout@^3.0.0-alpha.3":
-  version "3.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@ant-design-vue/pro-layout/-/pro-layout-3.0.0-alpha.3.tgz#30784316e371d441e222c82fa7a231b2155a1d24"
-  integrity sha512-4g4cAfDvKGXFwUhkYl3t/6q0YqNX95Tzgp388AwcE97+Vl61XqCcH/M+zCEljtLREWMeD9yKeqfFSxcK/Qy04A==
+"@ant-design-vue/pro-layout@^3.0.0-alpha.4":
+  version "3.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@ant-design-vue/pro-layout/-/pro-layout-3.0.0-alpha.4.tgz#bf6ad699eb20891d5deb1debf583490857b508fa"
+  integrity sha512-dZcG8LpAigIC9r7DJJE2RbaLNi2/9oioSpZUixO4aoEo5o3gYWc0mpqtEHuyoFnUsK5xNIgrXZ2JpKSOU94frA==
   dependencies:
     "@babel/runtime" "^7.11.2"
-    ant-design-vue "^2.0.0-rc.5"
+    ant-design-vue "^2.0.0-rc.8"
     lodash-es "^4.17.20"
     vue-types "^3.0.1"
 
@@ -629,7 +629,7 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-ant-design-vue@^2.0.0-rc.5, ant-design-vue@^2.0.0-rc.8:
+ant-design-vue@^2.0.0-rc.8:
   version "2.0.0-rc.8"
   resolved "https://registry.yarnpkg.com/ant-design-vue/-/ant-design-vue-2.0.0-rc.8.tgz#0f219aedb27f1797228aab79fbbd8328a7389a9f"
   integrity sha512-sPH/raQZhnzxUpFT5z8ONEvaf3SvUss6Llv9eBK05wqDTaj/+QSnJYflFGPZh4ScXGpJ4Pth9FMd+F0ogusGHg==

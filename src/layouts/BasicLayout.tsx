@@ -22,6 +22,7 @@ export default defineComponent({
         state.selectedKeys = keys;
       },
 
+      navTheme: 'dark',
       isMobile: false,
       fixSiderbar: false,
       fixedHeader: false,
@@ -58,7 +59,7 @@ export default defineComponent({
           v-model={[state.collapsed, 'collapsed']}
           title={'bee Admin'}
           layout={'mix'}
-          navTheme={'light'}
+          navTheme={state.navTheme}
           i18n={(key: string) => key}
           isMobile={state.isMobile}
           fixSiderbar={state.fixSiderbar}
