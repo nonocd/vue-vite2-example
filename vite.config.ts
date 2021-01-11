@@ -1,12 +1,17 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import { resolve } from 'path';
 
 export default defineConfig({
   alias: {
-    '/@': resolve(__dirname, 'src'),
+    '/@': resolve(__dirname, 'src/'),
   },
-  plugins: [vue()],
+  esbuild: {
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment',
+  },
+  plugins: [vue(), vueJsx()],
   optimizeDeps: {
     include: ['ant-design-vue/es/locale/zh_CN', 'moment/dist/locale/zh-cn'],
   },

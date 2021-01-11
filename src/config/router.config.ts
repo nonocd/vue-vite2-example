@@ -1,6 +1,6 @@
 import BasicLayout from '../layouts/BasicLayout';
-import Home from '../views/Home.vue';
 import { RouterView } from 'vue-router';
+import Home from '/@/views/Home.vue';
 
 export const menus = [
   {
@@ -19,7 +19,7 @@ export const menus = [
     path: '/about',
     name: 'About',
     meta: { title: '关于', icon: 'QuestionCircleOutlined' },
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: () => import('../views/About.vue'),
   },
   {
     path: '/dashboard',
@@ -31,19 +31,19 @@ export const menus = [
         path: '/dashboard/analysis',
         name: 'Analysis',
         meta: { icon: 'SmileOutlined', title: 'Analysis' },
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+        component: () => import('../views/About.vue'),
       },
       {
         path: '/dashboard/monitor',
         name: 'Monitor',
         meta: { icon: 'SmileOutlined', title: 'Monitor' },
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+        component: () => import('../views/About.vue'),
       },
       {
         path: '/dashboard/workplace',
         name: 'Workplace',
         meta: { icon: 'SmileOutlined', title: 'Workplace' },
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+        component: () => import('../views/About.vue'),
       },
     ],
   },
@@ -57,7 +57,7 @@ export const menus = [
         path: 'add',
         name: 'Add',
         meta: { title: '增加', icon: 'EditOutlined' },
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+        component: () => import('../views/About.vue'),
       },
     ],
   },
