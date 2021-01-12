@@ -16,9 +16,6 @@ export default defineConfig({
     include: ['ant-design-vue/es/locale/zh_CN', 'moment/dist/locale/zh-cn'],
   },
   css: {
-    modules: {
-      scopeBehaviour: 'global',
-    },
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
