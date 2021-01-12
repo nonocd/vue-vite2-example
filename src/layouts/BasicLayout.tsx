@@ -4,7 +4,6 @@ import {
   default as ProLayout,
   RouteContextProps,
 } from '@ant-design-vue/pro-layout';
-import { RouterView } from 'vue-router';
 import { menus } from '../config/menus';
 
 export default defineComponent({
@@ -70,7 +69,7 @@ export default defineComponent({
           siderWidth={state.sideWidth}
           splitMenus={state.splitMenus}
         >
-          <RouterView />
+          <router-view />
         </ProLayout>
       </RouteContextProvider>
     );

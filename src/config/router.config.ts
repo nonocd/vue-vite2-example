@@ -2,7 +2,7 @@ import BasicLayout from '../layouts/BasicLayout';
 import { RouterView } from 'vue-router';
 import Home from '/@/views/Home.vue';
 
-export const menus = [
+export const routes = [
   {
     path: '/welcome',
     name: 'welcome',
@@ -66,8 +66,9 @@ export const menus = [
 export const routerMap = [
   {
     path: '/',
-    name: '',
+    name: 'index',
+    meta: { title: '' },
     component: BasicLayout,
-    children: menus,
+    children: routes,
   },
 ];

@@ -1,17 +1,12 @@
 import { App } from 'vue';
-import * as Icon from '@ant-design/icons-vue';
+import * as Icons from '@ant-design/icons-vue';
 
-declare module '@ant-design/icons-vue/lib/index' {
-  type Icon = {
-    [key: string]: any;
-  };
-}
+const filterIcons = ['default', 'createFromIconfontCN', 'getTwoToneColor', 'setTwoToneColor'];
 
-export function setupIcons(app: App<Element>) {
-  const filterIcons = ['default', 'createFromIconfontCN', 'getTwoToneColor', 'setTwoToneColor'];
-  Object.keys(Icon)
+export function setupIcons(app: App) {
+  Object.keys(Icons)
     .filter(k => !filterIcons.includes(k))
     .forEach(k => {
-      app.component(Icon[k].displayName, Icon[k]);
+      app.component(Icons[k].displayName, Icons[k]);
     });
 }
