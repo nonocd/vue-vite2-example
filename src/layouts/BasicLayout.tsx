@@ -57,7 +57,7 @@ export default defineComponent({
         <ProLayout
           v-model={[state.collapsed, 'collapsed']}
           title={'bee Admin'}
-          layout={'mix'}
+          layout={'side'}
           navTheme={state.navTheme}
           i18n={(key: string) => key}
           isMobile={state.isMobile}
