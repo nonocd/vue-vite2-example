@@ -4,9 +4,10 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import { resolve } from 'path';
 
 export default defineConfig({
-  alias: {
-    '/@': resolve(__dirname, 'src/'),
-  },
+  alias: [
+    { find: '/@', replacement: resolve(__dirname, 'src/') },
+    { find: '~', replacement: resolve(__dirname, '') },
+  ],
   esbuild: {
     jsxFactory: 'h',
     jsxFragment: 'Fragment',
@@ -19,6 +20,11 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
+        plugins: [],
+        additionalData: (source: string, filename: string): string => {
+          console.warn('filename：', filename);
+          return source.replace(/~/g, '');
+        },
       },
     },
   },
