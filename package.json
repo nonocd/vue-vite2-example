@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "build": "vuedx-typecheck . && vite build"
+    "build": "vuedx-typecheck . && vite build",
+    "lint": "eslint src/ -c .eslintrc.js --ext .tsx,.ts",
+    "lint:fix": "eslint --fix src/ -c .eslintrc.js --ext .tsx,.ts"
   },
   "dependencies": {
-    "@ant-design-vue/pro-layout": "^3.0.0-alpha.4",
     "@ant-design/icons-vue": "^5.1.9",
     "ant-design-vue": "^2.0.0-rc.8",
     "moment": "^2.29.1",
@@ -14,6 +15,7 @@
     "vue-router": "^4.0.2"
   },
   "devDependencies": {
+    "@ant-design-vue/pro-layout": "^3.0.0-alpha.4",
     "@types/node": "^14.14.20",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
