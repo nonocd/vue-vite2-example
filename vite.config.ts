@@ -4,7 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import { resolve } from 'path';
 
 export default defineConfig({
-  alias: [{ find: '/@', replacement: resolve(__dirname, 'src/') }],
+  alias: [{ find: '/@', replacement: resolve(__dirname, 'src') }],
   esbuild: {
     jsxFactory: 'h',
     jsxFragment: 'Fragment',
