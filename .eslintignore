@@ -1,5 +1,7 @@
 node_modules
-dist/
+/config
+public
+dist
 *.html
 *.sh
 lib/
@@ -9,11 +11,9 @@ lib/
 *.ttf
 .vscode
 .idea
-.vscode
 .local
 /bin
 /build
-/config
 Dockerfile
 /src/assets/iconfont/
 /types/shims

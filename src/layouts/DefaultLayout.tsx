@@ -1,25 +1,22 @@
-import { defineComponent, reactive, ref, watch } from 'vue';
-import {
-  createRouteContext,
-  default as ProLayout,
-  RouteContextProps,
-} from '@ant-design-vue/pro-layout';
-import { menus } from '../config/menus';
+import { defineComponent, reactive, ref, watch } from 'vue'
+import { RouterView } from 'vue-router'
+import { createRouteContext, default as ProLayout } from '@ant-design-vue/pro-layout'
+import { menus } from '../config/menus'
 
 export default defineComponent({
   name: 'BasicLayout',
   inheritAttrs: false,
   setup() {
-    const state = reactive<RouteContextProps>({
+    const state = reactive({
       collapsed: false,
 
       openKeys: ['/dashboard'],
-      setOpenKeys: (keys: string[]) => (state.openKeys = keys),
       selectedKeys: ['/welcome'],
-      setSelectedKeys: (keys: string[]) => {
-        console.log('keys', keys);
-        state.selectedKeys = keys;
-      },
+      // setOpenKeys: (keys: string[]) => (state.openKeys = keys),
+      // setSelectedKeys: (keys: string[]) => {
+      //   console.log('keys', keys)
+      //   state.selectedKeys = keys
+      // },
 
       navTheme: 'dark',
       isMobile: false,
@@ -32,46 +29,41 @@ export default defineComponent({
       hasHeader: true,
       hasFooterToolbar: false,
       setHasFooterToolbar: (has: boolean) => (state.hasFooterToolbar = has),
-    });
-    const [RouteContextProvider] = createRouteContext();
+    })
+    const [RouteContextProvider] = createRouteContext()
 
-    const cacheOpenKeys = ref<string[]>([]);
+    const cacheOpenKeys = ref<string[]>([])
     watch(
       () => state.collapsed,
       (collapsed: boolean) => {
-        console.log('post watch', collapsed, state.collapsed);
+        console.log('post watch', collapsed, state.collapsed)
         if (collapsed) {
-          cacheOpenKeys.value = state.openKeys;
-          state.openKeys = [];
+          cacheOpenKeys.value = state.openKeys
+          state.openKeys = []
         } else {
-          state.openKeys = cacheOpenKeys.value;
+          state.openKeys = cacheOpenKeys.value
         }
       },
       {
         flush: 'pre',
       },
-    );
+    )
 
     return () => (
       <RouteContextProvider value={state}>
         <ProLayout
-          v-model={[state.collapsed, 'collapsed']}
+          {...state}
           title={'bee Admin'}
           layout={'side'}
           navTheme={state.navTheme}
-          i18n={(key: string) => key}
-          isMobile={state.isMobile}
-          fixSiderbar={state.fixSiderbar}
-          fixedHeader={state.fixedHeader}
           contentWidth={'Fixed'}
           primaryColor={'#1890ff'}
           contentStyle={{ minHeight: '300px' }}
-          siderWidth={state.sideWidth}
-          splitMenus={state.splitMenus}
+          locale={(i18n: string) => i18n}
         >
-          <router-view />
+          <RouterView />
         </ProLayout>
       </RouteContextProvider>
-    );
+    )
   },
-});
+})

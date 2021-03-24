@@ -2,7 +2,7 @@ import { computed, defineComponent, ref, toRef } from 'vue';
 import { Layout } from 'ant-design-vue';
 import { useCollapsed } from './hooks/collapsed';
 import { LayoutHeader } from './header';
-import { PropTypes } from '/@/utils';
+import { PropTypes } from './utils';
 import { SiderMenu } from './menu';
 import ProProvider from './ProProvider';
 import { MenuDataItem } from './typings';

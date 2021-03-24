@@ -1,6 +1,6 @@
-import BasicLayout from '../layouts/BasicLayout';
+import BasicLayout from '@/layouts/BasicLayout';
 import { RouterView } from 'vue-router';
-import Home from '/@/views/Home.vue';
+import Home from '@/views/Home.vue';
 
 export const routes = [
   {

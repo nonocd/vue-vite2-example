@@ -1,21 +1,19 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "strict": true,
     "jsx": "preserve",
-    // "strict": true,
-    "allowJs": true,
     "sourceMap": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["DOM", "DOM.Iterable", "ES6", "ES2020.Symbol.WellKnown", "ESNext.Symbol"],
+    "allowJs": true,
+    "lib": ["esnext", "dom"],
     "types": ["vite/client", "node"],
-    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
     "baseUrl": ".",
     "paths": {
-      "/@/*": ["src/*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
